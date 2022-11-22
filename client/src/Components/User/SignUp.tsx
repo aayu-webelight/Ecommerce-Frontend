@@ -1,6 +1,6 @@
+import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import "./style.css";
-import { Link, useNavigate } from "react-router-dom";
 
 interface Isignup {
   name: string;

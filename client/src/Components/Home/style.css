@@ -1,0 +1,13 @@
+.middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+.background-img {
+  background-image: url(./banner.jpg);
+  min-height: 50vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

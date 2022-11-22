@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Navbar from "./Navbar";
+import React, { useEffect, useState } from "react";
+import { GetProducts } from "./ProductFunction";
+import Header from "../Header/Header";
+
 import "./style.css";
 
 interface Irating {
@@ -22,22 +24,20 @@ function Allproducts() {
   const [products, setproducts] = useState([]);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((json) => {
-        localStorage.setItem("allproducts",JSON.stringify(json))
-        setproducts(json)
-      })
-      .catch((error) => console.log(error));
+    const productsfn = async () => {
+      const products = await GetProducts();
+
+      setproducts(products);
+    };
+    productsfn();
   }, []);
-  console.log(products);
 
   return (
     <>
-      <Navbar />
       {/* <input type="search" className="text-input-search" /> */}
+      <Header />
       <div className="d-grid">
-         {products.map((product: Iproduct, key: number) => {
+        {products.map((product: Iproduct, key: number) => {
           return (
             <>
               <div className="border" key={product.id.toString()}>

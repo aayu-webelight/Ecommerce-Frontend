@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Navbar from "./Navbar";
-import "./style.css";
 import StarRatings from "react-star-ratings";
+import React, { useEffect, useState } from "react";
+import "./style.css";
+import { oneProduct } from "./ProductFunction";
+import Header from "../Header/Header";
 
 interface Irating {
   rate: number;
@@ -34,21 +35,17 @@ function Product() {
   });
   const param = useParams();
   const id = param.id;
-  console.log(id);
+  console.log(typeof id);
   useEffect(() => {
-    fetch(`https://fakestoreapi.com/products/${id}`)
-      .then((res) => res.json())
-      .then((product) => {
-        console.log(product);
-        setProduct(product);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    const productfn = async (id: string) => {
+      const products = await oneProduct(id);
+      setProduct(products);
+    };
+    productfn(id as string);
   }, [id]);
   return (
     <>
-      <Navbar />
+      <Header />
       <div className="d-flex p-5 m-5">
         <div>
           <img
