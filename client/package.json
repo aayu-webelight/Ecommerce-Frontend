@@ -14,7 +14,6 @@
     "@types/react-router-dom": "^5.3.3",
     "@types/react-star-rating-component": "^1.4.1",
     "@types/react-star-ratings": "^2.3.0",
-    "prettier": "^2.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
@@ -49,5 +48,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "2.7.1"
   }
 }

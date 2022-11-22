@@ -1,0 +1,35 @@
+.middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+.height-100 {
+  min-height: 100vh;
+  max-height: 100vh;
+}
+.innersignin-box {
+  border: 1px solid black;
+  padding: 2vh;
+}
+.text-input {
+  padding: 1vh;
+  margin: 1vh;
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 10px;
+  font-size: larger;
+}
+.btn {
+  cursor: pointer;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}

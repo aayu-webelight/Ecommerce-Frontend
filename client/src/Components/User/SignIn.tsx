@@ -1,6 +1,6 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 import "./style.css";
 
 interface Isignin {
@@ -15,7 +15,7 @@ function SignIn() {
   });
   const navigate = useNavigate();
   const GotoHome = () => {
-    navigate("/home");
+    navigate("/");
   };
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     fetch("http://localhost:3001/user/login", {
